@@ -1,14 +1,12 @@
 
 (ns app.main
-  (:require [app.lib :as lib]))
-
-(def a 1)
-
-(defonce b 2)
+  ;(:require-macros [app.macros])
+  (:require [app.macros :as macros :refer-macros [m]]))
 
 (defn main! []
-  (println "[main]: loading"))
+  (println "Main"))
 
 (defn reload! []
-  (println "[main] reloaded lib:" lib/c lib/d)
-  (println "[main] reloaded:" a b))
+  (println "--------------------")
+  (println "Reloaded")
+  (println (m "I'm wrapped in a macro")))
